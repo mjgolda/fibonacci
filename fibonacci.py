@@ -1,6 +1,7 @@
 from flask import Flask
 import socket
 import time
+import os
 
 app = Flask(__name__)
 hostname = socket.gethostname()
@@ -13,6 +14,12 @@ def calculate_fibonacci(n):
     return n
   else:
     return calculate_fibonacci(n - 1) + calculate_fibonacci(n - 2)
+    
+@app.route("/")
+def hello_world():
+    """Example Hello World route."""
+    name = os.environ.get("NAME", "World")
+    return f"Hello {name}!"
 
 @app.route('/calculate')
 def do_calculation():
