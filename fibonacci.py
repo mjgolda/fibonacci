@@ -8,7 +8,7 @@ app = Flask(__name__)
 hostname = socket.gethostname()
 
 def theNumber():
-  return random.uniform(30, 60)
+  return random.uniform(35, 45)
 
 def calculate_fibonacci(n):
   """Calculates the nth Fibonacci number recursively
