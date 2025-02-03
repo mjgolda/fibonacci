@@ -2,9 +2,13 @@ from flask import Flask
 import socket
 import time
 import os
+import random
 
 app = Flask(__name__)
 hostname = socket.gethostname()
+
+def theNumber():
+  return random.uniform(30, 60)
 
 def calculate_fibonacci(n):
   """Calculates the nth Fibonacci number recursively
@@ -24,7 +28,7 @@ def hello_world():
 @app.route('/calculate')
 def do_calculation():
   start_time = time.time()
-  result = calculate_fibonacci(30)  # Adjust the Fibonacci number for load
+  result = calculate_fibonacci(theNumber())  # Adjust the Fibonacci number for load
   end_time = time.time()
 
   return [{
