@@ -28,7 +28,7 @@ def hello_world():
 @app.route('/calculate')
 def do_calculation():
   start_time = time.time()
-  result = calculate_fibonacci(40)  # Adjust the Fibonacci number for load
+  result = calculate_fibonacci(35)  # Adjust the Fibonacci number for load
   end_time = time.time()
 
   return [{
